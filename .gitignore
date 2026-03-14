@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+*.dist
+
+# Generated files
+*.tsbuildinfo
+coverage/
+
+# Logs
+*.log
+
+# Environment files
+.env*
+.env.local
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
