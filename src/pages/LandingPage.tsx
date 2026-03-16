@@ -6,7 +6,7 @@
    Prompt 1 Changes:
    - New hero: "Get More Reviews Without Asking Twice" + 3 CTAs
    - 4-tier pricing: Free Trial / RRDS Kit $149 / Core $47mo / Automation Pro $197mo
-   - Citations add-on below pricing
+   - Citations: Citation Boost $299 one-time + Citation Guard $47/mo
    - 3 testimonials (placeholder, replace with real)
    - Lead modal with 5 fields (Name, Business, Phone, Email, Website)
    - Mobile nav hamburger fix
@@ -1053,11 +1053,14 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: "0.9rem", fontWeight: 800,
                 color: "oklch(0.88 0.005 255)",
-              }}>Citations & Listings Management — <span style={{ color: "oklch(0.78 0.15 80)" }}>$59/mo add-on</span></div>
+              }}>Citations & Listings Management</div>
               <div style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "0.8rem", color: "oklch(0.45 0.015 255)",
-              }}>Get your business listed accurately across 60+ directories. Available with any paid plan.</div>
+                fontSize: "0.8rem", color: "oklch(0.45 0.015 255)", marginTop: 4,
+              }}>
+                <strong style={{ color: "oklch(0.78 0.15 80)" }}>Citation Boost</strong> — $299 one-time · Submit to 60+ directories + data aggregators<br/>
+                <strong style={{ color: "oklch(0.78 0.15 80)" }}>Citation Guard</strong> — $47/mo · Ongoing monitoring, corrections & NAP protection
+              </div>
             </div>
           </div>
           <div style={{
