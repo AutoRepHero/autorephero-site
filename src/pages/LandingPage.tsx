@@ -564,7 +564,7 @@ function ReviewHubFeature({ onGetStarted }: { onGetStarted: () => void }) {
             color: "oklch(0.95 0.005 255)", marginBottom: "1rem",
           }}>
             One Tap. Five Stars.<br />
-            <span style={{ color: "oklch(0.7 0.22 240)" }}>Every Time.</span>
+            <span style={{ color: "oklch(0.7 0.22 240)" }}>Zero Hassle.</span>
           </h2>
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
