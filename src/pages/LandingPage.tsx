@@ -312,7 +312,7 @@ function Nav({ onGetStarted }: { onGetStarted: () => void }) {
             }}>
               <Phone size={12} /> {PHONE}
             </a>
-            <button onClick={() => navigate("/review")} style={{
+            <button onClick={() => window.open("https://app.autorephero.com", "_blank")} style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.06em",
               padding: "0.45rem 1rem", borderRadius: 8,
@@ -366,7 +366,7 @@ function Nav({ onGetStarted }: { onGetStarted: () => void }) {
               }}>{l.label.toUpperCase()}</button>
             ))}
             <div style={{ display: "flex", gap: 10, marginTop: "1.25rem" }}>
-              <button onClick={() => { setOpen(false); navigate("/review"); }} style={{
+              <button onClick={() => { setOpen(false); window.open("https://app.autorephero.com", "_blank"); }} style={{
                 flex: 1, fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: "0.82rem", fontWeight: 700, letterSpacing: "0.05em",
                 padding: "0.7rem", borderRadius: 8,
@@ -467,7 +467,7 @@ function Hero({ onGetStarted }: { onGetStarted: () => void }) {
             }}>GET THE DEPLOYMENT KIT</button>
           </div>
 
-          <button onClick={() => navigate("/review")} style={{
+          <button onClick={() => window.open("https://app.autorephero.com", "_blank")} style={{
             background: "none", border: "none", cursor: "pointer",
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.88rem", fontWeight: 600,
@@ -611,7 +611,7 @@ function ReviewHubFeature({ onGetStarted }: { onGetStarted: () => void }) {
             <img src={NFC_CARD} alt="AutoRepHero NFC Card"
               style={{ width: "100%", maxWidth: 420, borderRadius: 16, boxShadow: "0 24px 80px oklch(0.62 0.2 240 / 0.2)" }} />
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
-              <button onClick={() => navigate("/review")} style={{
+              <button onClick={() => window.open("https://app.autorephero.com", "_blank")} style={{
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.07em",
                 padding: "0.7rem 1.5rem", borderRadius: 10,
