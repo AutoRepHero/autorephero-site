@@ -5,7 +5,7 @@
    Logo: ARHSheild.png (CDN)
    Prompt 1 Changes:
    - New hero: "Get More Reviews Without Asking Twice" + 3 CTAs
-   - 4-tier pricing: Free Trial / RRDS Kit $149 / Core $49mo / Automation Pro $197mo
+   - 4-tier pricing: Free Trial / RRDS Kit $149 / Core $47mo / Automation Pro $197mo
    - Citations add-on below pricing
    - 3 testimonials (placeholder, replace with real)
    - Lead modal with 5 fields (Name, Business, Phone, Email, Website)
@@ -856,7 +856,7 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
     {
       name: "CORE PLAN",
       subtitle: "Monthly Subscription",
-      price: "$49",
+      price: "$47",
       period: "/mo",
       desc: "The full Review Hub platform with analytics, reporting, and priority support. Permanent infrastructure for your reputation.",
       features: [
@@ -868,7 +868,7 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
         "Ongoing platform updates",
       ],
       trial: false,
-      cta: "SUBSCRIBE — $49/MO",
+      cta: "SUBSCRIBE — $47/MO",
       highlight: false,
       available: false,
       badge: "COMING SOON",
