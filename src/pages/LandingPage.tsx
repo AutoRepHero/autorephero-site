@@ -32,6 +32,8 @@ const EMAIL = "info@autorephero.com";
 // ─── Lead Capture Modal ───────────────────────────────────────
 function LeadModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [form, setForm] = useState({ name: "", business: "", phone: "", email: "", website: "" });
+  const [smsConsent, setSmsConsent] = useState(false);
+  const [marketingConsent, setMarketingConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -54,6 +56,8 @@ function LeadModal({ open, onClose }: { open: boolean; onClose: () => void }) {
           phone: form.phone,
           email: form.email,
           website: form.website || "Not provided",
+          sms_consent: smsConsent ? "Yes" : "No",
+          marketing_consent: marketingConsent ? "Yes" : "No",
           _replyto: form.email,
           _subject: `New AutoRepHero Lead — ${form.business}`,
         }),
@@ -165,6 +169,51 @@ function LeadModal({ open, onClose }: { open: boolean; onClose: () => void }) {
                   />
                 </div>
               ))}
+              {/* SMS Consent Checkbox */}
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", marginTop: "0.25rem" }}>
+                <input
+                  type="checkbox"
+                  checked={smsConsent}
+                  onChange={(e) => setSmsConsent(e.target.checked)}
+                  style={{ marginTop: 3, accentColor: "oklch(0.62 0.2 240)", width: 16, height: 16, flexShrink: 0 }}
+                />
+                <label style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.68rem", color: "oklch(0.55 0.015 255)", lineHeight: 1.5,
+                }}>
+                  I consent to receive non-marketing text messages from AutoRepHero about service follow-ups and review requests. Message frequency varies. Msg & data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                </label>
+              </div>
+
+              {/* Marketing Consent Checkbox */}
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem" }}>
+                <input
+                  type="checkbox"
+                  checked={marketingConsent}
+                  onChange={(e) => setMarketingConsent(e.target.checked)}
+                  style={{ marginTop: 3, accentColor: "oklch(0.62 0.2 240)", width: 16, height: 16, flexShrink: 0 }}
+                />
+                <label style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.68rem", color: "oklch(0.55 0.015 255)", lineHeight: 1.5,
+                }}>
+                  I consent to receive marketing and promotional messages from AutoRepHero. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out.
+                </label>
+              </div>
+
+              {/* Privacy + Terms links */}
+              <div style={{ textAlign: "center", marginTop: "0.15rem" }}>
+                <a href="/privacy" target="_blank" style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.65rem", color: "oklch(0.55 0.1 240)", textDecoration: "underline",
+                }}>Privacy Policy</a>
+                <span style={{ color: "oklch(0.35 0 0)", margin: "0 0.4rem" }}>·</span>
+                <a href="/terms" target="_blank" style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "0.65rem", color: "oklch(0.55 0.1 240)", textDecoration: "underline",
+                }}>Terms of Service</a>
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
