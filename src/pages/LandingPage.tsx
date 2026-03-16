@@ -98,7 +98,7 @@ function LeadModal({ open, onClose }: { open: boolean; onClose: () => void }) {
         <button onClick={onClose} style={{
           position: "absolute", top: 16, right: 16,
           background: "none", border: "none", cursor: "pointer",
-          color: "oklch(0.6 0.02 255)",
+          color: "oklch(0.72 0.02 255)",
         }}><X size={18} /></button>
 
         {submitted ? (
@@ -231,7 +231,7 @@ function LeadModal({ open, onClose }: { open: boolean; onClose: () => void }) {
               </button>
               <p style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "0.7rem", color: "oklch(0.58 0.02 255)",
+                fontSize: "0.7rem", color: "oklch(0.7 0.02 255)",
                 textAlign: "center",
               }}>No spam. No contracts. We protect your inbox like we protect your reputation.</p>
             </form>
@@ -958,7 +958,7 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
               }}>{name}</div>
               <div style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "0.8rem", color: "oklch(0.58 0.02 255)",
+                fontSize: "0.8rem", color: "oklch(0.7 0.02 255)",
                 marginBottom: "0.75rem",
               }}>{subtitle}</div>
 
@@ -1009,7 +1009,7 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
               {note && (
                 <p style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "0.7rem", color: "oklch(0.58 0.02 255)",
+                  fontSize: "0.7rem", color: "oklch(0.7 0.02 255)",
                   lineHeight: 1.5, marginBottom: "1rem", fontStyle: "italic",
                 }}>{note}</p>
               )}
@@ -1145,7 +1145,7 @@ function FAQ() {
                 <div style={{
                   flexShrink: 0, transition: "transform 0.2s",
                   transform: open === i ? "rotate(180deg)" : "none",
-                  color: open === i ? "oklch(0.7 0.22 240)" : "oklch(0.6 0.02 255)",
+                  color: open === i ? "oklch(0.7 0.22 240)" : "oklch(0.72 0.02 255)",
                 }}>
                   <ChevronDown size={16} />
                 </div>
@@ -1210,7 +1210,7 @@ function ExpansionModules() {
           <div style={{
             flexShrink: 0, transition: "transform 0.25s",
             transform: open ? "rotate(180deg)" : "none",
-            color: open ? "oklch(0.7 0.22 240)" : "oklch(0.6 0.02 255)",
+            color: open ? "oklch(0.7 0.22 240)" : "oklch(0.72 0.02 255)",
           }}>
             <ChevronDown size={18} />
           </div>
@@ -1325,36 +1325,36 @@ function Footer() {
           <img src={ARH_LOGO} alt="AutoRepHero" style={{ width: 22, height: 22, objectFit: "contain" }} />
           <span style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "0.8rem", fontWeight: 700, color: "oklch(0.6 0.02 255)",
+            fontSize: "0.8rem", fontWeight: 700, color: "oklch(0.72 0.02 255)",
           }}>AutoRepHero</span>
-          <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "oklch(0.5 0.02 255)" }}>
-            · Spokane, WA · chuckZonline LLC
+          <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "oklch(0.65 0.02 255)" }}>
+            · Spokane, WA · ChuckZonline LLC
           </span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", flexWrap: "wrap" }}>
           <a href={`tel:+15098180787`} style={{
             display: "flex", alignItems: "center", gap: 5,
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.75rem", color: "oklch(0.58 0.02 255)", textDecoration: "none",
+            fontSize: "0.75rem", color: "oklch(0.7 0.02 255)", textDecoration: "none",
           }}>
             <Phone size={12} /> {PHONE}
           </a>
           <a href={`mailto:${EMAIL}`} style={{
             display: "flex", alignItems: "center", gap: 5,
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.75rem", color: "oklch(0.58 0.02 255)", textDecoration: "none",
+            fontSize: "0.75rem", color: "oklch(0.7 0.02 255)", textDecoration: "none",
           }}>
             <Mail size={12} /> {EMAIL}
           </a>
           <a href="/privacy" style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.72rem", color: "oklch(0.58 0.02 255)", textDecoration: "none",
+            fontSize: "0.72rem", color: "oklch(0.7 0.02 255)", textDecoration: "none",
           }}>Privacy Policy</a>
           <a href="/terms" style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.72rem", color: "oklch(0.58 0.02 255)", textDecoration: "none",
+            fontSize: "0.72rem", color: "oklch(0.7 0.02 255)", textDecoration: "none",
           }}>Terms of Service</a>
-          <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "oklch(0.48 0.02 255)" }}>
+          <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "oklch(0.62 0.02 255)" }}>
             © 2026 AutoRepHero. All rights reserved.
           </span>
         </div>
