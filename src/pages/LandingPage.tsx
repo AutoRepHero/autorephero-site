@@ -433,9 +433,9 @@ function Hero({ onGetStarted }: { onGetStarted: () => void }) {
             color: "oklch(0.97 0.005 255)",
             marginBottom: "1.25rem",
           }}>
-            Get More Reviews<br />
-            <span style={{ color: "oklch(0.7 0.22 240)" }}>Without Asking</span><br />
-            <span style={{ color: "oklch(0.78 0.15 80)" }}>Twice.</span>
+            Get More Reviews.<br />
+            <span style={{ color: "oklch(0.7 0.22 240)" }}>Rank Higher.</span><br />
+            <span style={{ color: "oklch(0.78 0.15 80)" }}>Win.</span>
           </h1>
 
           <p style={{
