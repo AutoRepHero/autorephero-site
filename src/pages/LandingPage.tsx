@@ -1297,6 +1297,14 @@ function Footer() {
           }}>
             <Mail size={12} /> {EMAIL}
           </a>
+          <a href="/privacy" style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "0.72rem", color: "oklch(0.38 0.015 255)", textDecoration: "none",
+          }}>Privacy Policy</a>
+          <a href="/terms" style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "0.72rem", color: "oklch(0.38 0.015 255)", textDecoration: "none",
+          }}>Terms of Service</a>
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.72rem", color: "oklch(0.28 0.015 255)" }}>
             © 2026 AutoRepHero. All rights reserved.
           </span>
