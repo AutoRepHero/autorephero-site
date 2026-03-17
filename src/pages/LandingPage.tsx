@@ -458,7 +458,7 @@ function Hero({ onGetStarted }: { onGetStarted: () => void }) {
             }}>
               START FREE — 14 DAY TRIAL <ArrowRight size={15} />
             </button>
-            <button onClick={() => scrollTo("#pricing")} style={{
+            <button onClick={() => window.open(STRIPE_KIT_URL, "_blank")} style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: "0.88rem", fontWeight: 700, letterSpacing: "0.06em",
               padding: "0.9rem 1.75rem", borderRadius: 10,
