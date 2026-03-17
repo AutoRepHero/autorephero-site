@@ -811,6 +811,10 @@ function Testimonials() {
   );
 }
 
+// ─── Stripe Payment Links (Live Mode) ───────────────────────
+const STRIPE_KIT_URL = "https://pay.chuckzonline.com/b/eVq28jfRU3tl57VdBu63K01";
+const STRIPE_CORE_URL = "https://pay.chuckzonline.com/b/4gMeV5eNQ5Bt0RF1SM63K02";
+
 // ─── Pricing ──────────────────────────────────────────────────
 function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
   const plans = [
@@ -819,16 +823,17 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
       subtitle: "Try Before You Pay",
       price: "FREE",
       period: "14 days",
-      desc: "See results before you spend a dime. Full Review Hub, smart routing, and AI prompts — live for your business in 24 hours.",
+      desc: "See results before you spend a dime. Full Review Hub with Facebook, Yelp, and BBB — live for your business in 24 hours. No credit card required.",
       features: [
         "Review Hub page for your business",
-        "Smart review routing (3 platforms)",
+        "Smart review routing (Facebook, Yelp, BBB)",
         "AI-powered review starters for customers",
         "Shareable link (text, email, QR)",
-        "See results before you pay a dime",
+        "14 days free — no credit card required",
       ],
       trial: true,
       cta: "START FREE TRIAL",
+      ctaAction: "lead",
       highlight: false,
       available: true,
       badge: null,
@@ -849,6 +854,7 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
       ],
       trial: false,
       cta: "ORDER YOUR KIT",
+      ctaAction: "kit",
       highlight: true,
       available: true,
       badge: "MOST POPULAR",
@@ -858,10 +864,10 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
       subtitle: "Monthly Subscription",
       price: "$47",
       period: "/mo",
-      desc: "The full Review Hub platform with analytics, reporting, and priority support. Permanent infrastructure for your reputation.",
+      desc: "The full Review Hub platform — all platforms including Google unlocked — with analytics, reporting, and priority support.",
       features: [
         "Everything in the Kit",
-        "Review Hub with up to 5 platforms",
+        "All review platforms including Google",
         "Review analytics dashboard",
         "Monthly review performance reports",
         "Priority support",
@@ -869,9 +875,10 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
       ],
       trial: false,
       cta: "SUBSCRIBE — $47/MO",
+      ctaAction: "core",
       highlight: false,
-      available: false,
-      badge: "COMING SOON",
+      available: true,
+      badge: null,
     },
     {
       name: "AUTOMATION PRO",
@@ -890,6 +897,7 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
       ],
       trial: false,
       cta: "GO AUTOMATIC — $197/MO",
+      ctaAction: "coming-soon",
       highlight: false,
       available: false,
       badge: "COMING SOON",
@@ -928,7 +936,7 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
           gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: "1.5rem", alignItems: "start",
         }}>
-          {plans.map(({ name, subtitle, price, period, desc, features, trial, cta, highlight, available, badge, note }: any) => (
+          {plans.map(({ name, subtitle, price, period, desc, features, trial, cta, ctaAction, highlight, available, badge, note }: any) => (
             <div key={name} style={{
               padding: "2rem",
               background: highlight ? "oklch(0.14 0.025 240)" : "oklch(0.12 0.02 240)",
@@ -994,17 +1002,26 @@ function Pricing({ onGetStarted }: { onGetStarted: () => void }) {
                 lineHeight: 1.55, marginBottom: "1.5rem",
               }}>{desc}</p>
 
-              <button onClick={onGetStarted} style={{
-                width: "100%",
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.07em",
-                padding: "0.8rem", borderRadius: 10,
-                background: available ? (highlight ? "oklch(0.62 0.2 240)" : "oklch(0.55 0.18 240)") : "transparent",
-                border: available ? "none" : "1px solid oklch(0.3 0.04 255)",
-                color: available ? "white" : "oklch(0.55 0.015 255)",
-                cursor: "pointer", marginBottom: "1.5rem",
-                boxShadow: available ? "0 0 20px oklch(0.62 0.2 240 / 0.25)" : "none",
-              }}>{cta}</button>
+              <button
+                onClick={() => {
+                  if (ctaAction === "lead") { onGetStarted(); }
+                  else if (ctaAction === "kit") { window.open(STRIPE_KIT_URL, "_blank"); }
+                  else if (ctaAction === "core") { window.open(STRIPE_CORE_URL, "_blank"); }
+                  // coming-soon: no action
+                }}
+                disabled={!available}
+                style={{
+                  width: "100%",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.07em",
+                  padding: "0.8rem", borderRadius: 10,
+                  background: available ? (highlight ? "oklch(0.62 0.2 240)" : "oklch(0.55 0.18 240)") : "transparent",
+                  border: available ? "none" : "1px solid oklch(0.3 0.04 255)",
+                  color: available ? "white" : "oklch(0.55 0.015 255)",
+                  cursor: available ? "pointer" : "default", marginBottom: "1.5rem",
+                  boxShadow: available ? "0 0 20px oklch(0.62 0.2 240 / 0.25)" : "none",
+                  opacity: available ? 1 : 0.6,
+                }}>{cta}</button>
 
               {note && (
                 <p style={{
