@@ -47,7 +47,7 @@ function LeadModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("https://formspree.io/f/xvgaqlkb", {
+      const res = await fetch("https://formspree.io/f/xjgapzzw", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
