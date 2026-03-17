@@ -285,7 +285,7 @@ function Nav({ onGetStarted }: { onGetStarted: () => void }) {
           </div>
 
           {/* Desktop nav links — hidden on mobile */}
-          <div style={{ display: "flex", alignItems: "center", gap: 28 }} className="hidden md:flex">
+          <div style={{ alignItems: "center", gap: 28 }} className="hidden md:flex">
             {links.map(l => (
               <button key={l.label} onClick={() => scrollTo(l.href)}
                 style={{
@@ -303,7 +303,7 @@ function Nav({ onGetStarted }: { onGetStarted: () => void }) {
           </div>
 
           {/* Desktop CTAs — hidden on mobile */}
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }} className="hidden md:flex">
+          <div style={{ alignItems: "center", gap: 10 }} className="hidden md:flex">
             <a href={`tel:+15098180787`} style={{
               display: "flex", alignItems: "center", gap: 5,
               fontFamily: "'Space Grotesk', sans-serif",
@@ -330,7 +330,7 @@ function Nav({ onGetStarted }: { onGetStarted: () => void }) {
           </div>
 
           {/* Mobile right side: phone + hamburger */}
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }} className="flex md:hidden">
+          <div style={{ alignItems: "center", gap: 10 }} className="flex md:hidden">
             <a href="tel:+15098180787" style={{
               display: "flex", alignItems: "center", gap: 4,
               fontFamily: "'Space Grotesk', sans-serif",
